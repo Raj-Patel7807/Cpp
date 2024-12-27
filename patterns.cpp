@@ -26,11 +26,10 @@ void pattern22(int n);
 
 int main() {
 
-    int n;
-    cin >> n;
+    int n = 5;
 
     pattern22(n);
-    
+
     return 0;
 }
 
@@ -41,6 +40,14 @@ void pattern1(int n) {
         }
         cout << "\n";
     }
+    /*
+    OUTPUT :
+    *****
+    *****
+    *****
+    *****
+    *****
+    */
 }
 
 void pattern2(int n) {
@@ -50,6 +57,14 @@ void pattern2(int n) {
         }
         cout << "\n";
     }
+    /*
+    OUTPUT :
+    *
+    **
+    ***
+    ****
+    *****
+    */
 }
 
 void pattern3(int n) {
@@ -59,6 +74,14 @@ void pattern3(int n) {
         }
         cout << "\n";
     }
+    /*
+    OUTPUT :
+    1
+    12
+    123
+    1234
+    12345
+    */
 }
 
 void pattern4(int n) {
@@ -68,6 +91,14 @@ void pattern4(int n) {
         }
         cout << "\n";
     }
+    /*
+    OUTPUT :
+    1
+    22
+    333
+    4444
+    55555
+    */
 }
 
 void pattern5(int n) {
@@ -77,6 +108,14 @@ void pattern5(int n) {
         }
         cout << "\n";
     }
+    /*
+    OUTPUT :
+    *****
+    ****
+    ***
+    **
+    *
+    */
 }
 
 void pattern6(int n) {
@@ -86,6 +125,14 @@ void pattern6(int n) {
         }
         cout << "\n";
     }
+    /*
+    OUTPUT :
+    12345
+    1234
+    123
+    12
+    1
+    */
 }
 
 void pattern7(int n) {
@@ -101,6 +148,14 @@ void pattern7(int n) {
         }
         cout << "\n";
     }
+    /*
+    OUTPUT :
+        *
+       ***
+      *****
+     *******
+    *********
+    */
 }
 
 void pattern8(int n) {
@@ -116,6 +171,14 @@ void pattern8(int n) {
         }
         cout << "\n";
     }
+    /*
+    OUTPUT :
+    *********
+     *******
+      *****
+       ***
+        *
+    */
 }
 
 void pattern9(int n) {
@@ -143,6 +206,19 @@ void pattern9(int n) {
         }
         cout << "\n";
     }
+    /*
+    OUTPUT :
+        *
+       ***
+      *****
+     *******
+    *********
+    *********
+     *******
+      *****
+       ***
+        *
+    */
 }
 
 void pattern10(int n) {
@@ -158,6 +234,18 @@ void pattern10(int n) {
         }
         cout << "\n";
     }
+    /*
+    OUTPUT :
+    *
+    **
+    ***
+    ****
+    *****
+    ****
+    ***
+    **
+    *
+    */
 }
 
 void pattern11(int n) {
@@ -169,6 +257,14 @@ void pattern11(int n) {
         }
         cout << "\n";
     }
+    /*
+    OUTPUT :
+    1
+    01
+    101
+    0101
+    10101
+    */
 }
 
 void pattern12(int n) {
@@ -184,6 +280,14 @@ void pattern12(int n) {
         }
         cout << "\n";
     }
+    /*
+    OUTPUT :
+    1        1
+    12      21
+    123    321
+    1234  4321
+    1234554321
+    */
 }
 
 void pattern13(int n) {
@@ -195,6 +299,14 @@ void pattern13(int n) {
         }
         cout << "\n";
     }
+    /*
+    OUTPUT :
+    1
+    2 3
+    4 5 6
+    7 8 9 10
+    11 12 13 14 15
+    */
 }
 
 void pattern14(int n) {
@@ -206,6 +318,14 @@ void pattern14(int n) {
         }
         cout << "\n";
     }
+    /*
+    OUTPUT :
+    A
+    AB
+    ABC
+    ABCD
+    ABCDE
+    */
 }
 
 void pattern15(int n) {
@@ -217,6 +337,14 @@ void pattern15(int n) {
         }
         cout << "\n";
     }
+    /*
+    OUTPUT :
+    ABCDE
+    ABCD
+    ABC
+    AB
+    A
+    */
 }
 
 void pattern16(int n) {
@@ -228,6 +356,14 @@ void pattern16(int n) {
         ch++;
         cout << "\n";
     }
+    /*
+    OUTPUT :
+    A
+    BB
+    CCC
+    DDDD
+    EEEEE
+    */
 }
 
 void pattern17(int n) {
@@ -247,6 +383,14 @@ void pattern17(int n) {
         }
         cout << "\n";
     }
+    /*
+    OUTPUT :
+        A
+       ABA
+      ABCBA
+     ABCDCBA
+    ABCDEDCBA
+    */
 }
 
 void pattern18(int n) {
@@ -258,6 +402,14 @@ void pattern18(int n) {
         }
         cout << "\n";
     }
+    /*
+    OUTPUT :
+    E
+    DE
+    CDE
+    BCDE
+    ABCDE
+    */
 }
 
 void pattern19(int n) {
@@ -285,6 +437,19 @@ void pattern19(int n) {
         }
         cout << "\n";
     }
+    /*
+    OUTPUT :
+    **********
+    ****  ****
+    ***    ***
+    **      **
+    *        *
+    *        *
+    **      **
+    ***    ***
+    ****  ****
+    **********
+    */
 }
 
 void pattern20(int n) {
@@ -312,6 +477,18 @@ void pattern20(int n) {
         }
         cout << "\n";
     }
+    /*
+    OUTPUT :
+    *        *
+    **      **
+    ***    ***
+    ****  ****
+    **********
+    ****  ****
+    ***    ***
+    **      **
+    *        *
+    */
 }
 
 void pattern21(int n) {
@@ -325,6 +502,14 @@ void pattern21(int n) {
         }
         cout << "\n";
     }
+    /*
+    OUTPUT :
+    *****
+    *   *
+    *   *
+    *   *
+    *****
+    */
 }
 
 void pattern22(int n) {
@@ -338,4 +523,16 @@ void pattern22(int n) {
         }
         cout << "\n";
     }
+    /*
+    OUTPUT :
+    5 5 5 5 5 5 5 5 5 
+    5 4 4 4 4 4 4 4 5 
+    5 4 3 3 3 3 3 4 5 
+    5 4 3 2 2 2 3 4 5 
+    5 4 3 2 1 2 3 4 5 
+    5 4 3 2 2 2 3 4 5 
+    5 4 3 3 3 3 3 4 5
+    5 4 4 4 4 4 4 4 5
+    5 5 5 5 5 5 5 5 5
+    */
 }

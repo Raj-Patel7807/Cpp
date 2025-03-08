@@ -25,13 +25,41 @@ node* buildTree(node* root) {
 
     root = new node(data);
     
-    cout << "For The Left Child of " << data << endl;
+    cout << "For The Left Child of " << data << " ";
     root->left = buildTree(root->left);
 
-    cout << "For The Right Child of " << data << endl;
+    cout << "For The Right Child of " << data << " ";
     root->right = buildTree(root->right);
 
     return root;
+}
+
+void levelOrderTraversal(node* root) {
+    queue<node*> q;
+    q.push(root);
+    q.push(nullptr);
+
+    while(!q.empty()) {
+        node* temp = q.front();
+        q.pop();
+
+        if(temp == nullptr) {
+            cout << endl;
+
+            if(!q.empty()) {
+                q.push(nullptr);
+            }
+        } else { 
+            cout << temp->data << " ";
+
+            if(temp->left) {
+                q.push(temp->left);
+            }
+            if(temp->right) {
+                q.push(temp->right);
+            }
+        }
+    }
 }
 
 void deleteTree(node* root) {
@@ -51,6 +79,9 @@ int main() {
 
     root = buildTree(root);
     cout << "\nTree Built Successfully" << endl;
+
+    cout << "\nLevel Order Traversal : \n";
+    levelOrderTraversal(root);
 
     deleteTree(root);
     cout << "\nTree Deleted Successfully\n" << endl;

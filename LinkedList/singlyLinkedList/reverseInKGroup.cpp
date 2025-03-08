@@ -23,57 +23,34 @@ void printList(node* head) {
     cout << "NULL" << endl;
 }
 
-void reverseList(node*& head) {
-    node* prev = nullptr;
-    node* tmp = head;
-
-    while(tmp) {
-        node* nextNode = tmp->next;
-        tmp->next = prev;
-        prev = tmp;
-        tmp = nextNode;
-    }
-
-    head = prev;
-
-    cout << "List Reversed.." << endl;
-}
-
-void reverseListRecursive(node*& head, node* curr, node* prev) {
-    if(curr == nullptr) {
-        head = prev;
-        return;
-    }
-
-    node* nextNode = curr->next;
-
-    reverseListRecursive(head, nextNode, curr);
-
-    curr->next = prev;
-}
-
-void reverseListRecursive1(node*& head) {
+node* reverseListKGroup(node*& head, int k) {
     if(head == nullptr) {
-        return;
+        return head;
     }
 
-    node* first = head;
-    node* rest = head->next;
+    node* prev = nullptr;
+    node* curr = head;
+    node* nextNode = nullptr;
 
-    if(rest == nullptr) {
-        return;
+    int count = 0;
+
+    while(curr != nullptr && count < k) {
+        nextNode = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = nextNode;
+        count++;
     }
 
-    reverseListRecursive1(rest);
+    if(nextNode != nullptr) {
+        head->next = reverseListKGroup(nextNode, k);
+    }
 
-    first->next->next = first;
-    first->next = nullptr;
-
-    head = rest;
+    return prev;
 }
 
 void deleteList(node*& head) {
-    while (head) {
+    while(head) {
         node* tmp = head;
         head = head->next;
         delete tmp;
@@ -104,14 +81,7 @@ int main() {
 
     printList(head);
 
-    reverseList(head);
-    printList(head);
-
-    reverseListRecursive(head, head, nullptr);
-    printList(head);
-
-    reverseListRecursive1(head);
-    printList(head);
+    printList(reverseListKGroup(head, 3));
 
     deleteList(head);
 

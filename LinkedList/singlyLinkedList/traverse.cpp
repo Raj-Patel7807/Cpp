@@ -1,14 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct node {
-    int data;
-    node* next;
+class node {
+    public:
+        int data;
+        node* next;
 
-    node(int data) {
-        this->data = data;
-        next = nullptr; 
-    }
+        node(int data) {
+            this->data = data;
+            this->next = nullptr; 
+        }
 };
 
 void printList(node* head) {

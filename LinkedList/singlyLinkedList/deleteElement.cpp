@@ -136,8 +136,10 @@ int main() {
 
     deleteAtBeginning(head);
     printList(head);
+
     deleteAtEnd(head);
     printList(head);
+    
     deleteAtPosition(head, 4);
     printList(head);
 

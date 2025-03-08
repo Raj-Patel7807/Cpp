@@ -118,8 +118,10 @@ int main() {
 
     insertAtBeginning(head, 8);
     printList(head);
+
     insertAtEnd(head, 10);
     printList(head);
+    
     insertAtPosition(head, 12, 5);
     printList(head);
 

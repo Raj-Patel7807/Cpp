@@ -12,13 +12,13 @@ public:
     }
 };
 
-class List {
+class SinglyList {
 private:
     Node* head;
     Node* tail;
 
 public:
-    List() {
+    SinglyList() {
         head = nullptr;
         tail = nullptr;
     }
@@ -182,35 +182,35 @@ public:
 
 int main() {
 
-    List l1;
+    SinglyList sll;
 
-    l1.push_front(1);
-    l1.push_front(2);
-    l1.push_front(3);
-    l1.printLL();
+    sll.push_front(1);
+    sll.push_front(2);
+    sll.push_front(3);
+    sll.printLL();
 
-    l1.push_back(4);
-    l1.push_back(5);
-    l1.push_back(7);
-    l1.printLL();
+    sll.push_back(4);
+    sll.push_back(5);
+    sll.push_back(7);
+    sll.printLL();
 
-    l1.pop_front();
-    l1.printLL();
+    sll.pop_front();
+    sll.printLL();
 
-    l1.pop_back();
-    l1.printLL();
+    sll.pop_back();
+    sll.printLL();
 
-    l1.insert(6, 2);
-    l1.printLL();
+    sll.insert(6, 2);
+    sll.printLL();
 
-    l1.erase(1);
-    l1.printLL();
+    sll.erase(1);
+    sll.printLL();
 
-    cout << "Search 6 : " << l1.search(6) << endl;
-    cout << "Search 10 : " << l1.search(10) << endl;
+    sll.reverse();
+    sll.printLL();
 
-    l1.reverse();
-    l1.printLL();
+    cout << "Search 6 : " << sll.search(6) << endl;
+    cout << "Search 10 : " << sll.search(10) << endl;
 
     return 0;
 }

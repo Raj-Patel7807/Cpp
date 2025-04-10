@@ -3,13 +3,14 @@ using namespace std;
 
 class Stack {
 private:
-    int arr[1000];
+    int* arr;
     int TOP;
     int capacity;
 
 public:
     Stack() {
         capacity = 1000;
+        arr = new int[capacity];
         TOP = -1;
     }
 

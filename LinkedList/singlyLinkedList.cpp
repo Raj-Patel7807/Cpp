@@ -172,7 +172,13 @@ public:
     }
 
     void printLL() {
+        if(!head) {
+            cout << "List is empty" << endl;
+            return;
+        }
+        
         Node* tmp = head;
+        cout << "Head -> ";
         while(tmp) {
             cout << tmp -> data << " -> ";
             tmp = tmp -> next;

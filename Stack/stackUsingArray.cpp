@@ -8,8 +8,8 @@ private:
     int capacity;
 
 public:
-    Stack() {
-        capacity = 1000;
+    Stack(int cap) {
+        capacity = cap;
         arr = new int[capacity];
         TOP = -1;
     }
@@ -45,7 +45,7 @@ public:
 
 int main() {
 
-    Stack s;
+    Stack s(3);
 
     s.push(1);
     s.push(2);

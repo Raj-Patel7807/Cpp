@@ -15,6 +15,7 @@ public:
 };
 
 class DoublyList {
+private:
     Node* head;
     Node* tail;
 
@@ -176,7 +177,13 @@ public:
     }
 
     void printLL() {
+        if (head == nullptr) {
+            cout << "List is empty" << endl;
+            return;
+        }
+        
         Node* temp = head;
+        cout << "NULL(Head) <=> ";
         while (temp != nullptr) {
             cout << temp->data << " <=> ";
             temp = temp->next;

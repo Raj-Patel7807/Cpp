@@ -168,7 +168,7 @@ void postOrderByIteration2(Node* root) { // Left Right Root
     }
 }
 
-void allInOneByRecursion(Node* root, vector<int>& pre, vector<int>& in, vector<int>& post) { // All in one Traversal;
+void allInOneByRecursion(Node* root, vector<int>& pre, vector<int>& in, vector<int>& post) { // All In One Traversal;
     if(!root) {
         return;
     }
@@ -178,6 +178,36 @@ void allInOneByRecursion(Node* root, vector<int>& pre, vector<int>& in, vector<i
     in.push_back(root->data); // In-order
     allInOneByRecursion(root->right, pre, in, post); // Right
     post.push_back(root->data); // Post-order
+}
+
+void allInOneByIteration(Node* root, vector<int>& pre, vector<int>& in, vector<int>& post) { // All In One Traversal;
+    if(!root) {
+        return;
+    }
+
+    stack<pair<Node*, int>> s; // Node, State (0: Pre-order, 1: In-order, 2: Post-order)
+    s.push({root, 0});
+
+    while(!s.empty()) {
+        if(s.top().second == 0) {
+            pre.push_back(s.top().first->data); // Pre-order
+            s.top().second++;
+
+            if(s.top().first->left) {
+                s.push({s.top().first->left, 0});
+            }
+        } else if (s.top().second == 1) {
+            in.push_back(s.top().first->data); // In-order
+            s.top().second++;
+
+            if(s.top().first->right) {
+                s.push({s.top().first->right, 0});
+            }
+        } else {
+            post.push_back(s.top().first->data); // Post-order
+            s.pop();
+        }
+    }
 }
 
 Node* buildTree(vector<int>& tree, int& idx) { // Build tree from pre order traversal;
@@ -247,6 +277,13 @@ int main() {
     vector<int> pre, in, post;
     allInOneByRecursion(root, pre, in, post);
     cout << "All In-one Traversal (Recursion): " << endl;
+    cout << "   Pre-order: "; for (int val : pre) cout << val << " "; cout << endl;
+    cout << "   In-order: "; for (int val : in) cout << val << " "; cout << endl;
+    cout << "   Post-order: "; for (int val : post) cout << val << " "; cout << endl;
+
+    pre.clear(); in.clear(); post.clear();
+    allInOneByIteration(root, pre, in, post);
+    cout << "All In-one Traversal (Iteration): " << endl;
     cout << "   Pre-order: "; for (int val : pre) cout << val << " "; cout << endl;
     cout << "   In-order: "; for (int val : in) cout << val << " "; cout << endl;
     cout << "   Post-order: "; for (int val : post) cout << val << " "; cout << endl;

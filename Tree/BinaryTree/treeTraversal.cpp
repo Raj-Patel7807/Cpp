@@ -168,6 +168,18 @@ void postOrderByIteration2(Node* root) { // Left Right Root
     }
 }
 
+void allInOneByRecursion(Node* root, vector<int>& pre, vector<int>& in, vector<int>& post) { // All in one Traversal;
+    if(!root) {
+        return;
+    }
+
+    pre.push_back(root->data); // Pre-order
+    allInOneByRecursion(root->left, pre, in, post); // Left
+    in.push_back(root->data); // In-order
+    allInOneByRecursion(root->right, pre, in, post); // Right
+    post.push_back(root->data); // Post-order
+}
+
 Node* buildTree(vector<int>& tree, int& idx) { // Build tree from pre order traversal;
     idx++;
     if (idx >= tree.size() || tree[idx] == -1) {
@@ -231,6 +243,13 @@ int main() {
     cout << "Post-order Traversal (Iteration 2): ";
     postOrderByIteration2(root);
     cout << endl;
+
+    vector<int> pre, in, post;
+    allInOneByRecursion(root, pre, in, post);
+    cout << "All In-one Traversal (Recursion): " << endl;
+    cout << "   Pre-order: "; for (int val : pre) cout << val << " "; cout << endl;
+    cout << "   In-order: "; for (int val : in) cout << val << " "; cout << endl;
+    cout << "   Post-order: "; for (int val : post) cout << val << " "; cout << endl;
 
     clearTree(root);
     cout << "Tree cleared." << endl;

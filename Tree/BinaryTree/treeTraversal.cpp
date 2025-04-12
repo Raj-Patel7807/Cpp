@@ -96,19 +96,19 @@ void inOrderByIteration(Node* root) { // Left Root Right;
     }
 
     stack<Node*> s;
-    Node* current = root;
+    Node* node = root;
 
-    while (current != nullptr || !s.empty()) {
-        while (current != nullptr) {
-            s.push(current);
-            current = current->left;
+    while(true) {
+        if(node) {
+            s.push(node);
+            node = node -> left;
+        } else {
+            if(s.empty()) break;
+            node = s.top();
+            s.pop();
+            cout << node -> data << " ";
+            node = node -> right;
         }
-
-        current = s.top();
-        s.pop();
-
-        cout << current->data << " ";
-        current = current->right;
     }
 }
 

@@ -139,6 +139,35 @@ void postOrderByIteration(Node* root) { // Left Right Root;
     }
 }
 
+void postOrderByIteration2(Node* root) { // Left Right Root
+    if(!root) {
+        return;
+    }
+
+    stack<Node*> s;
+    Node* node = root;
+
+    while(!s.empty() || node) {
+        if(node) {
+            s.push(node);
+            node = node -> left;
+        } else {
+            Node* tmp = s.top() -> right;
+            if(tmp) {
+                node = tmp;
+            } else {
+                tmp = s.top();
+                s.pop();
+                cout << tmp -> data << " ";
+                while(!s.empty() && s.top()->right == tmp) {
+                    tmp = s.top(); s.pop();
+                    cout << tmp -> data << " ";
+                }
+            }
+        }
+    }
+}
+
 Node* buildTree(vector<int>& tree, int& idx) { // Build tree from pre order traversal;
     idx++;
     if (idx >= tree.size() || tree[idx] == -1) {
@@ -197,6 +226,10 @@ int main() {
 
     cout << "Post-order Traversal (Iteration): ";
     postOrderByIteration(root);
+    cout << endl;
+
+    cout << "Post-order Traversal (Iteration 2): ";
+    postOrderByIteration2(root);
     cout << endl;
 
     clearTree(root);
